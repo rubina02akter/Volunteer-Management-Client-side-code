@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import volunteerAnimation from "../../assets/lottie/Animation - 1734115829090.json";
-import { Link } from "react-router-dom";
 
 const SectionThree = () => {
   return (
@@ -26,11 +25,7 @@ const SectionThree = () => {
             Start your volunteering journey today. Whether you want to create
             opportunities or help others, our platform is here for you.
           </p>
-         <Link to='/login'>
-         <button className="mt-6 btn text-white bg-[#148161] px-6 py-3 rounded-lg font-semibold hover:bg-[#f1f1f1] transition-all">
-            Join Now
-          </button>
-         </Link>
+          
         </motion.div>
         <motion.div
           className="w-full md:w-1/2 mt-8 md:mt-0"
