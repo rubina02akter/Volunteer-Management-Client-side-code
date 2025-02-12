@@ -49,12 +49,12 @@ const AllPost = () => {
     }
   }, [searchQuery]);
 
-  // Sort posts based on the sorting order
+  // Sort posts based on volunteersNeeded
   const sortedPosts = [...posts].sort((a, b) => {
     if (sortOrder === "asc") {
-      return a.title.localeCompare(b.title);
+      return a.volunteersNeeded - b.volunteersNeeded;
     } else {
-      return b.title.localeCompare(a.title);
+      return b.volunteersNeeded - a.volunteersNeeded;
     }
   });
 
@@ -108,7 +108,7 @@ const AllPost = () => {
               className="btn btn-sm"
               onClick={toggleSortOrder}
             >
-              Sort {sortOrder === "asc" ? "Descending" : "Ascending"}
+              Sort by V.no.-{sortOrder === "asc" ? "Descending" : "Ascending"}
             </button>
           </div>
         </div>
@@ -133,42 +133,20 @@ const AllPost = () => {
               </thead>
               <tbody>
                 {sortedPosts.map((post) => (
-                  <>
-                    <tr key={post._id} className={`text-white hover:bg-gray-100 ${theme === 'dark' ? 'hover:bg-transparent hover:bg-opacity-10  hover:backdrop-blur-sm  ' : ''}`}>
-                      <td className="border border-gray-200 p-2">
-                        <div className="avatar">
-                          <div className="mask mask-squircle h-12 w-12">
-                            <img
-                              src={post.thumbnail}
-                              alt="Avatar Tailwind CSS Component"
-                            />
-                          </div>
+                  <tr key={post._id} className={`text-white hover:bg-gray-100 ${theme === 'dark' ? 'hover:bg-transparent hover:bg-opacity-10 hover:backdrop-blur-sm' : ''}`}>
+                    <td className="border border-gray-200 p-2">
+                      <div className="avatar">
+                        <div className="mask mask-squircle h-12 w-12">
+                          <img src={post.thumbnail} alt="Avatar Tailwind CSS Component" />
                         </div>
-                      </td>
-                      <td className={`border text-black border-gray-200 p-2 ${theme === 'dark' ? 'text-white' : ''}`}>{post.title}</td>
-                      <td className={`border text-black border-gray-200 p-2 ${theme === 'dark' ? 'text-white' : ''}`}>
-                        {post.description.slice(0, 50)}...
-                      </td>
-                      <td className="border border-gray-200 p-2">
-                        <button
-                          className='btn  btn-sm'
-                          onClick={() => toggleExpand(post._id)}
-                        >
-                          {expandedPostId === post._id ? "Hide" : "View"}
-                        </button>
-                      </td>
-                    </tr>
-                    {expandedPostId === post._id && (
-                      <tr>
-                        <td colSpan="3" className="p-4">
-                          {/* Render grid card in the table row */}
-                          <div className="bg-gray-100 p-4 rounded-lg shadow">
-                            <AllPostCard post={post} />
-                          </div>
-                        </td>
-                      </tr>
-                    )}
-                  </>
+                      </div>
+                    </td>
+                    <td className={`border text-black border-gray-200 p-2 ${theme === 'dark' ? 'text-white' : ''}`}>{post.title}</td>
+                    <td className={`border text-black border-gray-200 p-2 ${theme === 'dark' ? 'text-white' : ''}`}>{post.description.slice(0, 50)}...</td>
+                    <td className="border border-gray-200 p-2">
+                      <button className='btn btn-sm' onClick={() => toggleExpand(post._id)}>{expandedPostId === post._id ? "Hide" : "View"}</button>
+                    </td>
+                  </tr>
                 ))}
               </tbody>
             </table>
