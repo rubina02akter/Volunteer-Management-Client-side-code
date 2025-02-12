@@ -35,8 +35,8 @@ const Home = () => {
       </div>
       <div>{/* <Section></Section> */}</div>
       <div className={`${theme === 'dark'?'text-white' : 'text-black'}`}>
-        <h2 className="text-center font-extrabold text-4xl my-6">
-          We have the power to change tomorrow
+        <h2 className="text-center font-extrabold text-4xl my-7">
+          ---We have the power to change tomorrow---
         </h2>
         <ImgSection></ImgSection>
         <div className="text-center mt-6">
