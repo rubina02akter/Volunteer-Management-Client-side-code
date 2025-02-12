@@ -10,7 +10,7 @@ const SectionTwo = () => {
         <h2 className={`text-3xl font-extrabold text-[#11362E] mb-4 ${ theme === 'dark'? 'text-white' : '' }`}>
           The all-in-one volunteer platform with the tools you’ve been wishing for
         </h2>
-        <p className={`text-lg  text-gray-700 mb-4 ${ theme === 'dark'? 'text-gray-300' : '' }`}>
+        <p className={`text-lg  text-black mb-4 ${ theme === 'dark'? 'text-gray-200' : '' }`}>
           Connect, manage, and contribute to the community through volunteer opportunities that matter.
         </p>
       </div>

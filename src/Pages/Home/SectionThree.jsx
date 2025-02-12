@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import volunteerAnimation from "../../assets/lottie/Animation - 1734115829090.json";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const SectionThree = () => {
+  const {theme} = useContext(AuthContext);
   return (
     <div className="py-12 ">
       <motion.div
@@ -14,8 +17,8 @@ const SectionThree = () => {
           visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
         }}
       >
-        <motion.div
-          className="w-full md:w-1/2"
+      <motion.div
+          className={` w-full md:w-1/2 ${theme === 'dark'? 'text-white' : ''}`}
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}

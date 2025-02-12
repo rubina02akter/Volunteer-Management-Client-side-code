@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+import { useContext } from "react";
 import { FaHandsHelping } from "react-icons/fa";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const SectionOne = () => {
+  const{theme} = useContext(AuthContext)
   return (
-    <div className=" py-12 px-6 ">
+
+    <div className={`py-12 px-6 ${theme === 'dark'? 'text-white' : ''}`}>
       <motion.div
         className="max-w-6xl mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -19,7 +23,7 @@ const SectionOne = () => {
         </p>
       </motion.div>
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
+        className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
         initial="hidden"
         animate="visible"
         variants={{
@@ -34,7 +38,7 @@ const SectionOne = () => {
           (title, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-2xl border-b-4 p-6 rounded-lg text-center text-[#148161]"
+              className="bg-gradient-to-r from-[#228d79] to-[#148161] shadow-2xl border-b-4 p-6 rounded-lg text-center text-white"
               variants={{
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0 },

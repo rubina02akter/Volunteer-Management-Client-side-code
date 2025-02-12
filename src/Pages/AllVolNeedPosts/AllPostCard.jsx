@@ -28,7 +28,7 @@ const AllPostCard = ({ post }) => {
       {/* Card Body */}
       <div className="card-body">
         <h2 className="card-title text-xl font-bold">{title}</h2>
-        <p className="text-sm text-gray-500">{description}</p>
+        <p className="text-sm ">{description}</p>
 
         {/* Details */}
         <div className="mt-4 text-sm space-y-2 font-semibold">
