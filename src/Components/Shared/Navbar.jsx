@@ -37,6 +37,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/contact">Contact</NavLink>
       </li>
+      <li>
+        <NavLink to="/analytics">Analytics</NavLink>
+      </li>
       {user && (
         <>
           <li className="dropdown2">

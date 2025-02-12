@@ -14,6 +14,7 @@ import MyReqPost from "../Pages/MyReqPost/MyReqPost";
 import MyList from "../Pages/beVolunteer/MyList";
 import MyPosts from "../Pages/MyPosts/MyPosts";
 import Contact from "../Pages/Contact/Contact";
+import Analytics from "../Pages/Analytics/Analytics";
 
 
 
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path:'contact',
         element:<Contact></Contact>,
+      },
+      {
+        path:'analytics',
+        element: <Analytics></Analytics>,
       },
     ]
   }
